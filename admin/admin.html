@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>MB Flora | Yönetim Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>MB Flora Admin</h2>
+    <ul>
+        <li>📊 Dashboard</li>
+        <li onclick="showSection('products')">🌸 Ürün Yönetimi</li>
+        <li onclick="showSection('orders')">📦 Siparişler</li>
+        <li onclick="window.location.href='../index/index.html'">🌐 Siteye Git</li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="header">
+        <h1 id="page-title">Sipariş Yönetimi</h1>
+        <button class="btn-add">+ Yeni Ürün Ekle</button>
+    </div>
+
+    <table id="orders-table">
+        <thead>
+            <tr>
+                <th>Sipariş No</th>
+                <th>Müşteri</th>
+                <th>Ürün</th>
+                <th>Tutar</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#1024</td>
+                <td>Ahmet Yılmaz</td>
+                <td>Pembe Güller</td>
+                <td>450 TL</td>
+                <td><span class="status-badge status-preparing">Hazırlanıyor</span></td>
+                <td><button onclick="alert('Durum Güncellendi')">Güncelle</button></td>
+            </tr>
+            <tr>
+                <td>#1025</td>
+                <td>Ayşe Demir</td>
+                <td>Beyaz Asalet</td>
+                <td>650 TL</td>
+                <td><span class="status-badge status-shipped">Kargoda</span></td>
+                <td><button onclick="alert('Durum Güncellendi')">Güncelle</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="admin-script.js"></script>
+</body>
+</html>
