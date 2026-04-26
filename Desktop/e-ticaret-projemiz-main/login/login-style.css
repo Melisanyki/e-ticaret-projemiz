@@ -1,0 +1,109 @@
+/* CSS: Profesyonel Makyaj */
+* { box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: #fff5f8; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.main-container {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(214, 51, 132, 0.1);
+    overflow: hidden;
+    width: 800px;
+    max-width: 90%;
+    height: 500px;
+}
+
+/* Sol Taraf: Yerel Görsel Kullanımı */
+.image-section {
+    flex: 1;
+    background-color: #d63384; 
+    background-image: url('../img/giris.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.image-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.image-section h1, .image-section p {
+    position: relative;
+    z-index: 2;
+}
+
+.image-section h1 { font-size: 32px; margin-bottom: 10px; font-weight: 600; }
+.image-section p { font-size: 16px; opacity: 0.9; margin: 0; }
+
+.form-section {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form-section h2 { 
+    color: #333; 
+    margin-bottom: 30px; 
+    font-weight: 500; 
+    text-align: center;
+}
+
+.input-group { position: relative; margin-bottom: 20px; }
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+    background-color: #fbfbfb;
+}
+.input-group input:focus {
+    border-color: #d63384;
+    outline: none;
+    background-color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #d63384;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.submit-btn:hover { background-color: #b02a6b; transform: translateY(-2px); }
+
+.footer-links { margin-top: 25px; text-align: center; font-size: 14px; color: #777; }
+.footer-links span { color: #d63384; cursor: pointer; font-weight: 500; }
+.footer-links span:hover { text-decoration: underline; }
+.forgot-pass { text-align: right; font-size: 13px; color: #888; margin-top: -10px; margin-bottom: 15px; display: block; text-decoration: none;}
+
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; height: auto; }
+    .image-section { display: none; }
+    .form-section { padding: 30px; }
+}
