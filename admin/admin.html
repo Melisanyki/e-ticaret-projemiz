@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>MB Flora | Yönetim Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-style.css">
+    <script src="admin-script.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>MB Flora Admin</h2>
+    <ul>
+        <li onclick="showSection('dashboard', this)" class="active">📊 Dashboard</li>
+        <li onclick="showSection('products')">🌸 Ürün Yönetimi</li>
+        <li onclick="showSection('orders')">📦 Siparişler</li>
+        <li onclick="window.location.href='../index/index.html'">🌐 Siteye Git</li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <!-- DASHBOARD -->
+    <div id="dashboard-section" class="content-section active">
+        <div class="header">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>150</h3><p>Toplam Sipariş</p>
+            </div>
+            <div class="stat-card">
+                <h3>28.500 TL</h3><p>Aylık Gelir</p>
+            </div>
+            <div class="stat-card">
+                <h3>12</h3><p>Bekleyen Sipariş</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÜRÜN YÖNETİMİ -->
+    <div id="products-section" class="content-section">
+        <div class="header">
+            <h1>Ürün Yönetimi</h1>
+            <button class="btn-add" onclick="toggleAddProductForm()">+ Yeni Ürün Ekle</button>
+        </div>
+        
+        <!-- YENİ ÜRÜN FORMU -->
+        <div id="add-product-form" class="form-overlay" style="display:none;">
+            <div class="form-container">
+                <h3>Yeni Ürün Ekle</h3>
+                <form onsubmit="addNewProduct(event)">
+                    <input type="text" id="new-product-name" placeholder="Ürün Adı" required>
+                    <input type="number" id="new-product-stock" placeholder="Stok Adedi" required>
+                    <input type="number" id="new-product-price" placeholder="Fiyat (TL)" required>
+                    <select id="new-product-category" required>
+                        <option value="">Kategori Seç</option>
+                        <option value="gul">Güller</option>
+                        <option value="orkide">Orkideler</option>
+                        <option value="lale">Laleler</option>
+                    </select>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-add">Ekle</button>
+                        <button type="button" class="btn-delete" onclick="toggleAddProductForm()">İptal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table id="products-table">
+            <thead>
+                <tr><th>Ürün</th><th>Kategori</th><th>Stok</th><th>Fiyat</th><th>İşlem</th></tr>
+            </thead>
+            <tbody id="products-tbody"></tbody>
+        </table>
+    </div>
+
+    <!-- SİPARİŞLER -->
+    <div id="orders-section" class="content-section">
+        <div class="header">
+            <h1>Sipariş Yönetimi</h1>
+        </div>
+        <table id="orders-table">
+            <thead><tr><th>Sipariş No</th><th>Müşteri</th><th>Ürün</th><th>Tutar</th><th>Durum</th><th>İşlem</th></tr></thead>
+            <tbody>
+                <tr><td>#1024</td><td>Ahmet Yılmaz</td><td>Pembe Güller</td><td>450 TL</td><td><span class="status-badge status-preparing">Hazırlanıyor</span></td><td><button class="btn-update" onclick="updateOrderStatus(this)">Kargoya Ver</button></td></tr>
+                <tr><td>#1025</td><td>Ayşe Demir</td><td>Beyaz Asalet</td><td>650 TL</td><td><span class="status-badge status-shipped">Kargoda</span></td><td><button class="btn-update" onclick="updateOrderStatus(this)">Teslim Edildi</button></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
