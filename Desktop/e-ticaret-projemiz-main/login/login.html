@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MB Flora | Zarafete Giriş Yap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="image-section">
+        <h1>MB Flora</h1>
+        <p>En tatlı çiçeklerle duygularınızı ifade edin. Hayatın her anına zarafet katıyoruz.</p>
+    </div>
+
+    <div class="form-section" id="authBox">
+        <h2 id="formTitle">Hoş Geldiniz</h2>
+        <form onsubmit="return handleAuth(event)">
+            <div id="dynamicFields"></div>
+            <div class="input-group">
+                <input type="email" placeholder="E-posta Adresiniz" id="email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Şifreniz" id="password" required>
+            </div>
+            <a href="#" class="forgot-pass" id="forgotLink">Şifremi Unuttum?</a>
+            <button type="submit" class="submit-btn" id="mainBtn">Giriş Yap</button>
+        </form>
+            <div style="text-align:center; margin-top: 15px;">
+                 <a href="#" onclick="adminGiris()" style="font-size:13px; color:#aaa; text-decoration:none;">
+    🔐 Admin Girişi
+</a>
+</div>
+        <div class="footer-links">
+            <p id="toggleText">Henüz hesabın yok mu? <span onclick="toggleForm()">Kayıt Ol</span></p>
+        </div>
+    </div>
+</div>
+
+<script src="login-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>MB Flora | Güvenilir Katalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="index.html">MB Flora 🌸</a>
+    </div>
+    <div class="nav-links">
+        <div id="login-btn" onclick="window.location.href='../login/login.html'">Giriş Yap</div>
+        <div id="cart-btn" onclick="toggleCart()">Sepetim (0)</div>
+    </div>
+</nav>
+
+<div class="hero-section">
+    <h1>Size Özel Çiçekler</h1>
+    <p>Duygularınızı en taze haliyle ulaştırıyoruz.</p>
+    
+    <div class="search-wrapper">
+        <input type="text" id="product-search" placeholder="Hangi çiçeği aramıştınız?" onkeyup="searchProducts()">
+    </div>
+</div>
+
+<div class="categories">
+    <button class="cat-btn active" onclick="filterData('all', this)">Tümü</button>
+    <button class="cat-btn" onclick="filterData('gul', this)">Güller</button>
+    <button class="cat-btn" onclick="filterData('orkide', this)">Orkideler</button>
+    <button class="cat-btn" onclick="filterData('lale', this)">Laleler</button>
+</div>
+
+<div class="product-grid">
+    <div class="product-card gul">
+        <div class="img-container">
+            <img src="../img/rose1.jpg" class="product-img">
+        </div>
+        <div class="product-info">
+            <small>GÜLLER</small>
+            <h3>Pembe Güller</h3>
+            <div class="product-price">450 TL</div>
+            <button class="add-btn" onclick="buy('Pembe Güller', 450)">SEPETE EKLE</button>
+        </div>
+    </div>
+
+    <div class="product-card orkide">
+        <div class="img-container">
+            <img src="../img/orchid1.jpg" class="product-img">
+        </div>
+        <div class="product-info">
+            <small>ORKİDELER</small>
+            <h3>Beyaz Asalet</h3>
+            <div class="product-price">650 TL</div>
+            <button class="add-btn" onclick="buy('Beyaz Asalet', 650)">SEPETE EKLE</button>
+        </div>
+    </div>
+
+    <div class="product-card gul">
+        <div class="img-container">
+            <img src="../img/rose2.jpg" class="product-img">
+        </div>
+        <div class="product-info">
+            <small>GÜLLER</small>
+            <h3>Pembiş Güller</h3>
+            <div class="product-price">280 TL</div>
+            <button class="add-btn" onclick="buy('Pembiş Güller', 280)">SEPETE EKLE</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="cart-modal" id="cartModal">
+    <h2>Sepetiniz 🛒</h2>
+    <div class="cart-items-list" id="cartList">
+        Sepetiniz şu an boş.
+    </div>
+    <div id="total-price" style="font-weight: 600; margin-bottom: 15px;">Toplam: 0 TL</div>
+    <button class="add-btn">Ödemeye Geç</button>
+    <br>
+    <button class="close-cart" onclick="toggleCart()">Kapat</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
